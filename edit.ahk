@@ -81,18 +81,6 @@ Send,{Text}`#
 return
 
 #If, IsRemnoteOrBrowser()
-<+4::
-if (A_PriorHotkey = "<+4")
-{
-    ; Too much time between presses, so this isn't a double-press.
-    Send,{Text}`$
-    inline_math_mode = 1
-    return
-}
-Send,{Text}`$
-return
-
-#If, IsRemnoteOrBrowser()
 <+5::
 if (A_PriorHotkey = "<+5")
 {
@@ -104,24 +92,50 @@ Send,{Text}`%
 return
 
 #If, IsRemnoteOrBrowser()
-<+6::
-Send,{Text}`^
-return
+:*:$$::
+Send,{Text}`$`$
+Send, ^{space}
+Loop {
+    Input, ov, V L1
+    If (ov = "`n") {
+        Send, ^{space}
+        Break
+    } 
+}
+Return
 
-#If, IsRemnoteOrBrowser()
-<+-::
-Send,{Text}`_
-return
 
-#If, IsRemnoteOrBrowser()
-<+9::
-Send,{Text}`(
-return
+; #If, IsRemnoteOrBrowser()
+; <+6::
+; Send,{Text}`^
+; return
 
-#If, IsRemnoteOrBrowser()
-<+0::
-Send,{Text}`)
-return
+; #If, IsRemnoteOrBrowser()
+; <+-::
+; Send,{Text}`_
+; return
+
+; #If, IsRemnoteOrBrowser()
+; <+9::
+; Send,{Text}`(
+; return
+
+; #If, IsRemnoteOrBrowser()
+; <+0::
+; Send,{Text}`)
+; return
+
+; #If, IsRemnoteOrBrowser()
+; <+4::
+; if (A_PriorHotkey = "<+4")
+; {
+;     ; Too much time between presses, so this isn't a double-press.
+;     Send,{Text}`$
+;     inline_math_mode = 1
+;     return
+; }
+; Send,{Text}`$
+; return
 
 ; For URL filter
 
