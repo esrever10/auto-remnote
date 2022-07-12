@@ -2,7 +2,6 @@
 Some autohotkey scripts for Remnote
 
 ## V1.8.7 特性
----
 
 - 自动识别 Remnote Windows 客户端和主流浏览器进程，不影响其他应用
 + 连续中文字符自动转Remnote对应英文字符命令
@@ -18,6 +17,5 @@ Some autohotkey scripts for Remnote
     - 输入 ￥￥ 或 $$ 自动切换输入法，回车后恢复
 
 ## Todo
----
 
 - 自动区分url，不影响其他网页
