@@ -8,17 +8,17 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #SingleInstance Ignore			;;执行程序前先关闭程序
 #Persistent
 
-IsRemnote() {
-    isRemnoteClient := WinActive("ahk_exe RemNote.exe")
-    isBrowser := WinActive("ahk_exe chrome.exe") or WinActive("ahk_exe msedge.exe") or WinActive("ahk_exe firefox.exe")
-    currentUrl := GetActiveBrowserURL()
-    isRemnoteUrl := InStr(currentUrl, "www.remnote.com") or InStr(currentUrl, "new.remnote.com") or InStr(currentUrl, "beta.remnote.com") or InStr(currentUrl, "remnote.io")
+; IsRemnote() {
+;     isRemnoteClient := WinActive("ahk_exe RemNote.exe")
+;     isBrowser := WinActive("ahk_exe chrome.exe") or WinActive("ahk_exe msedge.exe") or WinActive("ahk_exe firefox.exe")
+;     currentUrl := GetActiveBrowserURL()
+;     isRemnoteUrl := InStr(currentUrl, "www.remnote.com") or InStr(currentUrl, "new.remnote.com") or InStr(currentUrl, "beta.remnote.com") or InStr(currentUrl, "remnote.io")
 
-    flag := isRemnoteClient or (isBrowser and isRemnoteUrl)
+;     flag := isRemnoteClient or (isBrowser and isRemnoteUrl)
 
-    ; MsgBox, %currentUrl% %isRemnoteClient%? %isBrowser%  %isRemnoteUrl%  %flag%
-    Return flag
-}
+;     ; MsgBox, %currentUrl% %isRemnoteClient%? %isBrowser%  %isRemnoteUrl%  %flag%
+;     Return flag
+; }
 
 IsRemnoteOrBrowser() {
     isRemnoteClient := WinActive("ahk_exe RemNote.exe")
